@@ -33,7 +33,8 @@ wafzwm.sh
 
 ## Output
 
-    Generated reports will be saved in the specified output directory.
+    Generated reports will be saved in the current directory.
+    On the table the domain with columns empty indicate that the domain has WAF disabled. 
 
 ## Additional Information
 
