@@ -13,3 +13,5 @@ for site in $(cat "$SITES")
         cfcli zwm -z $site > temp.txt 
         cat temp.txt | grep -v "Deprecated\|Cloudflare zone WAF migration\|=============================\|Execution\|Key" | sed '/^$/d' | sed '/═/d' | sed 's/║//g' | sed 's/.*│//g' | sed 's/[[:blank:]]//g'| tr "\n" "," | sed 's/,$/!/g' |  awk 'BEGIN{RS="!";ORS="\n"}{print $0}' | sed 's/[ERROR]WAFisnotenable//' >>  $waf     
     done
+rm temp.txt 
+rm domains.txt
